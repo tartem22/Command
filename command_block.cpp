@@ -41,7 +41,6 @@ void CommandBlock::setTimeCode()
     timeCode = std::to_string(localTime->tm_hour) +
             std::to_string(localTime->tm_min) +
             std::to_string(localTime->tm_sec);
-    std::cout << "DGB: time code\t" << timeCode << std::endl;
 }
 
 void CommandBlock::logToCommandLine()
@@ -55,7 +54,6 @@ void CommandBlock::logToCommandLine()
 void CommandBlock::logToFile()
 {
     std::string filePath = "./log/" + timeCode + ".log";
-    std::cout << filePath << std::endl;
     FileLogger fileLogger;
     if(!fileLogger.open(filePath))
     {
