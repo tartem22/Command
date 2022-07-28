@@ -4,19 +4,19 @@
 
 int main(int argc, char *argv[])
 {
-    int maxStaticBlockSize = 0;
+    int maxStaticBlockSize = 3;
     if (argc > 1)
     {
         maxStaticBlockSize = atoi(argv[1]);
     }
 
     CommandHandler handler(maxStaticBlockSize);
-    for (std::string line; std::getline(std::cin, line);)
-    {
-        handler.handle(line);
-    }
+    // for (std::string line; std::getline(std::cin, line);)
+    // {
+    //     handler.handle(line);
+    // }
 
-    /*
+    // /*
     handler.handle("cmd_1");
     handler.handle("cmd_2");
     handler.handle("cmd_3");
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     handler.handle("cmd_8");
     handler.handle("cmd_9");
     handler.handle("}");
-    */
+    // */
 
     return 0;
 }

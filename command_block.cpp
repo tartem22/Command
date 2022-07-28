@@ -53,11 +53,13 @@ void CommandBlock::logToCommandLine()
 
 void CommandBlock::logToFile()
 {
-    std::string filePath = "./log/" + timeCode + ".log";
+    static int cnt = 10;
+    cnt++;
+    std::string filePath = "../log/" + timeCode + std::to_string(cnt) + ".log";
     FileLogger fileLogger;
     if(!fileLogger.open(filePath))
     {
-        std::filesystem::path path("./log");
+        std::filesystem::path path("../log");
         if(!std::filesystem::exists(path))
         {
             std::filesystem::create_directory(path);
